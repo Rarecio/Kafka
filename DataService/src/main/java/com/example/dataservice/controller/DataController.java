@@ -6,6 +6,7 @@ import com.example.dataservice.mapper.CommentMapper;
 import com.example.dataservice.mapper.NewsMapper;
 import com.example.dataservice.model.Comment;
 import com.example.dataservice.model.News;
+import com.example.dataservice.model.NewsWithNumber;
 import com.example.dataservice.service.DataService;
 import org.apache.kafka.common.errors.ResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
@@ -73,4 +74,15 @@ public class DataController {
         return ResponseEntity.ok(list);
     }
 
+
+    @GetMapping("/getTop2NewsPoCommentam")
+    ResponseEntity<List<NewsWithNumber>> getNewsWithCommentCount() {
+        List<NewsWithNumber> list = dataService.findTop4NewsWithCommentCount();
+        return ResponseEntity.ok(list);
+    }
+
+    @GetMapping("/getTopWithLikeNumber")
+    ResponseEntity<List<NewsWithNumber>> findTopWithLikeNumber(){
+        return ResponseEntity.ok(dataService.findTopWithLikeNumber());
+    }
 }

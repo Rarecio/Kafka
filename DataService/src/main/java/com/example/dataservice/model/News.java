@@ -2,6 +2,9 @@ package com.example.dataservice.model;
 
 import jakarta.persistence.*;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "news")
 public class News {

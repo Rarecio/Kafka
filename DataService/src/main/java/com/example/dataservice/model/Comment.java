@@ -59,6 +59,10 @@ public class Comment {
         this.likeNumber = likeNumber;
     }
 
+    public Integer getLikeNumber() {
+        return likeNumber;
+    }
+
     @Override
     public String toString() {
         return "Comment{" +

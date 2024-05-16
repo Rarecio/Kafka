@@ -20,17 +20,17 @@ public class TopicListener {
         this.dataService = dataService;
     }
 
-    @KafkaListener(topics = "news-topic", containerFactory = "kafkaListenerContainerFactoryNews")
-    void consumeNews(ConsumerRecord<Integer, NewsDTO> record){
-        NewsDTO newsDto = record.value();
-        News news = NewsMapper.INSTANCE.toEntity(newsDto);
-        dataService.saveNews(news);
-    }
-
-    @KafkaListener(topics = "comment-topic" ,containerFactory = "kafkaListenerContainerFactoryComment")
-    void consumeComment(ConsumerRecord<Integer, CommentDTO> record){
-        CommentDTO commentDto = record.value();
-        Comment comment = CommentMapper.INSTANCE.toEntity(commentDto);
-        dataService.saveComment(comment);
-    }
+//    @KafkaListener(topics = "news-topic", containerFactory = "kafkaListenerContainerFactoryNews")
+//    void consumeNews(ConsumerRecord<Integer, NewsDTO> record){
+//        NewsDTO newsDto = record.value();
+//        News news = NewsMapper.INSTANCE.toEntity(newsDto);
+//        dataService.saveNews(news);
+//    }
+//
+//    @KafkaListener(topics = "comment-topic" ,containerFactory = "kafkaListenerContainerFactoryComment")
+//    void consumeComment(ConsumerRecord<Integer, CommentDTO> record){
+//        CommentDTO commentDto = record.value();
+//        Comment comment = CommentMapper.INSTANCE.toEntity(commentDto);
+//        dataService.saveComment(comment);
+//    }
 }
